@@ -45,3 +45,19 @@ int subarray_sum(vector<int> arr)
 	}
 	return cnt;
 }
+
+
+
+another method:
+
+public static long subarraySum(List<Integer> arr) {
+    // Write your code here
+        long l = arr.size();
+        if(l == 0) return 0;
+        long sum = 0;
+        for(int i = 0; i < l; i++) {
+            int temp = arr.get(i);
+            sum += ((long)temp) * (l - i) * (i + 1);
+        }
+        return sum;
+    }
